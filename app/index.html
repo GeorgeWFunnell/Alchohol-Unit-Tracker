@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alcohol Unit Tracker</title>
+    <script src="./template_loading.js" type="module"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="manifest" href="app.webmanifest">
+    <link rel="icon" href="./i/logo.png">
+    <script src="index.js" type="module"></script>
+</head>
+
+<body>
+
+    <header>
+        <img src="i/logo.png" alt="logo" class="logo">
+        <div id="hamburger" class="Hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div id="MyLinks" class="inactive">
+            <button id="Home" class="linkButton">Home</button>
+            <button id="TrackedUnits" class="linkButton">Tracked Units</button>
+            <button id="InputDrinks" class="linkButton">Input Drinks</button>
+            <button id="DrinkDatabase" class="linkButton">Drink Database</button>
+        </div>
+
+    </header>
+
+    <div id="pageArea" class="pageArea">
+
+    </div>
+
+    <template id="MenuP">
+        <p>You Have Drank </p>
+        <p id="AUnit" class="AUnit"></p>
+        <p>Units of Alcohol</p>
+        <p>Blood Alcohol Level is
+            <br> Currently Approximately  </p>
+        <p id="BALevel" class="BALevel"> </p>
+        <p>That is roughly</p>
+        <p id="Price" class="Price"></p>
+        <p>Worth of Alcohol</p> 
+        <div class="buttonRow">
+            <button class="button" id="editB">Edit</button> <button class="button" id="moreB">More</button>
+        </div>
+        <button class="DRButton" id="awareB">Drink Responsibility</button>
+
+
+    </template>
+
+    <template id="TrackP">
+        <title>Tracked Units</title>
+        <div class = "informationArea">
+
+        </div>
+    </template>
+
+
+    <template id="EditDrinkP">
+        <title>Drink Editor</title>
+        <p>Drink:</p>
+        <input type="text" id="inputBox">
+        <p>Quantity:</p>
+        <input type="number" id="quantity">
+        <div class="buttonRow">
+        <input type="radio" id="Single" value="Single" name="Amount">
+        <label for="Single">Single</label>
+        <input type="radio" id="Double" value="Double" name="Amount">
+        <label for="Double" id="Double" value="Double">Double</label>
+        </div>
+        <button id="buttonA" class="AddButton">Add</button>
+        </template>
+
+    <template id="DatabaseP">
+        <title id="Database">Database</title>
+        <div class="informationArea"></div>
+    </template>
+
+    <template id="ErrorP">
+        <title>Error Page</title>
+        <p>Uh oh an error occurred, please navigate back using the hamburger menu</p>
+    </template>
+
+</body>
+
+</html>

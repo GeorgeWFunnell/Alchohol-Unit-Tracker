@@ -1,0 +1,16 @@
+{
+    "name": "Alcohol Unit Tracker",
+    "short_name": "Unit Tracker",
+    "display": "standalone",
+    "start_url": "/",
+    "icons": [{
+        "src": "./i/logo.png",
+        "sizes": "362x149",
+        "purpose": "any"
+    }, {
+        "src": "./i/logoSquare.png",
+        "sizes": "149x149",
+        "purpose": "any"
+    }],
+    "background_colour": "#000000"
+}
