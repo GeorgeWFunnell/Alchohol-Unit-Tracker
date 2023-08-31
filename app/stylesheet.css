@@ -8,6 +8,8 @@ body {
 
 p {
     color: #640E27;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    display: grid;
 }
 
 header {
@@ -74,6 +76,8 @@ header {
     height: 5vh;
     margin-top: 1%;
     color: white;
+    bottom: 0;
+    position: fixed;
 }
 
 .AddButton {
@@ -84,6 +88,10 @@ header {
     background-color: #640E27;
     font-size: 150%;
     color: white;
+}
+
+.showTables{
+   font-size: 1rem;
 }
 
 #MyLinks {
