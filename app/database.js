@@ -32,9 +32,8 @@ export async function removeDrinkFromRecord(ID) {
 
 export async function combineDirnkNameID() {
   const db = await dbConn;
-  const query = 'SELECT History.ID, History.Time, Drinks.name AS DrinkName, History.Units, History.Price FROM History  LEFT JOIN Drinks ON History.Drink_ID = Drinks.ID';
-  const result = await db.all(query);
-  return result;
+  const query = 'SELECT History.ID, History.Time, Drinks.name AS DrinkName, History.Units, History.Price FROM History LEFT JOIN Drinks ON History.Drink_ID = Drinks.ID';
+  return db.all(query);
 }
 
 // returns a specific drink from the record

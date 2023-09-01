@@ -22,7 +22,7 @@ Insert INTO Drinks(name, type, Units, Alc_perc, Price)
 VALUES ('Smirnoff', 'Vodka', '1', '40', '20');
 
 Insert INTO Drinks(name, type, Units, Alc_perc, Price) 
-VALUES ('Absolute', 'Vodka', '1', '40', '20');
+VALUES ('Absolut', 'Vodka', '1', '40', '20');
 
 Insert INTO Drinks(name, type, Units, Alc_perc, Price) 
 VALUES ('Grey Goose', 'Vodka', '1', '40', '20');

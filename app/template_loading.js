@@ -1,5 +1,5 @@
 import { addDrinkInfo } from './drinks.js';
-import { combineDrinkNameID } from './database.js';
+
 
 // Sets up event listeners for the hamburger menu which only needs to be done once
 function setUp() {
@@ -36,8 +36,7 @@ function loadHamburger() {
     menu.classList.add('inactive');
   }
 }
-
-/* Prints the database onto the page
+/*
 async function showDatabaseInfo() {
   clearBody('.informationArea');
   const div = document.querySelector('.informationArea');
@@ -64,7 +63,6 @@ async function showDatabaseInfo() {
 }
 
 /*
- Prints drink history onto the page
 async function showDrinkHistory() {
   clearBody('.informationArea');
   const div = document.querySelector('.informationArea');
@@ -76,22 +74,24 @@ async function showDrinkHistory() {
     drinkInfo.textContent = JSON.stringify(drink);
     div.append(drinkInfo);
   }
-} */
+}
+*/
+
+async function combineDrinkNameID() {
+  const response = await fetch('combineDrink');
+  const drinkData = await response.json();
+  return drinkData;
+}
 
 async function showDrinkHistory() {
-  try {
-    clearBody('.informationArea');
+  clearBody('.informationArea');
+  const div = document.querySelector('.informationArea');
+  const response = await fetch('fullrecord');
+  const history = await response.json();
 
-    const div = document.querySelector('.informationArea');
-    const response = await fetch('fullrecord');
-    const history = await response.json();
-
-    for (const drink of history) {
-      const drinkInfo = createDrinkInfoElement(drink);
-      div.appendChild(drinkInfo);
-    }
-  } catch (error) {
-    console.error('Error fetching drink history:', error);
+  for (const drink of history) {
+    const drinkInfo = createDrinkInfoElement(drink);
+    div.appendChild(drinkInfo);
   }
 }
 
@@ -99,7 +99,7 @@ async function createDrinkInfoElement(drink) {
   const drinkInfo = document.createElement('div');
   drinkInfo.classList.add('drinkInfo');
 
-  const drinkData = await combineDrinkNameID(); // Call the function to get the data
+  const drinkData = await combineDrinkNameID();
   const matchingDrink = drinkData.find(item => item.ID === drink.Drink_ID);
 
   if (matchingDrink) {

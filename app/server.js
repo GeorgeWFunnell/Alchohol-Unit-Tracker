@@ -33,6 +33,10 @@ async function returnFullRecord(req, res) {
   res.json(await db.returnFullRecord());
 }
 
+async function combineDrinkNameID(req, res) {
+  res.json(await db.combineDrinkNameID());
+}
+
 // Returns the full drink database
 async function returnDatabase(req, res) {
   res.json(await db.returnDatabase());
@@ -43,6 +47,7 @@ app.get('/find/:name', asyncWrap(findDrink));
 app.get('/add/:ID/:quantity/:price', asyncWrap(addDrink));
 app.get('/fulldatabase', asyncWrap(returnDatabase));
 app.get('/fullrecord', asyncWrap(returnFullRecord));
+app.get('/combineDrink', asyncWrap(combineDrinkNameID));
 
 app.listen(8081);
 console.log('Server listening on port 8081');
