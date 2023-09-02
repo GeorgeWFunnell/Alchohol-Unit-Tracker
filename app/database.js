@@ -55,8 +55,10 @@ export async function returnDatabase() {
 }
 
 // Returns how many drinks were drunk in a variable amount of days
+/*
 export async function drunkInTime(timeFrame) {
   const db = await dbConn;
   const searchTime = db.get("unixepoch('now', 'localtime', '-' + timeFrame + 'days') as time)");
   const drinks = db.all('SELECT * FROM History WHERE unixepoch(Time) > ?', searchTime.time);
 }
+*/
